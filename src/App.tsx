@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
@@ -19,7 +19,8 @@ const App = () => {
   return (
     <Layout>
       <Routes>
-        <Route path="portfolio/" element={<Home />} />
+        <Route path="/" element={<Navigate to="/portfolio" replace />} />
+        <Route path="portfolio" element={<Home />} />
         <Route path="portfolio/home" element={<Home />} />
         <Route path="portfolio/about" element={<About />} />
         <Route path="portfolio/articles" element={<Blog />} />
