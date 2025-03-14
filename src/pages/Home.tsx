@@ -1,13 +1,14 @@
 import React from "react";
 import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 
+
 const Home = () => {
   return (
     <div className="max-w-4xl mx-auto px-6 ">
       {/* Hero Section */}
       <section className="text-center py-12 ">
         <img
-          src="/profile.png"
+          src="/assets/images/profile.png"
           alt="Profile"
           className="w-20 h-20 rounded-full mx-auto"
         />

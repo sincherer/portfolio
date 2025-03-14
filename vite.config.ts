@@ -7,6 +7,16 @@ export default defineConfig({
   base: '/portfolio/',
   build: {
     assetsDir: 'assets',
-    outDir: 'dist'
+    outDir: 'dist',
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name].[ext]'
+      }
+    }
+  },
+  server: {
+    headers: {
+      'Content-Type': 'application/javascript'
+    }
   }
 })
