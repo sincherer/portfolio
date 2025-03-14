@@ -88,14 +88,18 @@ const PulsifiCase01 = () => {
                 <img
                    src="../assets/images/job-before.jpg"
                   alt="Profile"
-                  className="w-20 h-20 rounded-full mx-auto"
+                  className=" rounded-lg mx-auto"
                   />
                 </div>
               </div>
               <div>
                 <h3 className="text-lg font-medium mb-3">After</h3>
                 <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
-                  [Sidebar Navigation Screenshot]
+                <img
+                   src="../assets/images/job-after.jpg"
+                  alt="Profile"
+                  className=" rounded-lg mx-auto"
+                  />
                 </div>
               </div>
             </div>
