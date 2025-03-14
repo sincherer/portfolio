@@ -7,7 +7,7 @@ const Home = () => {
       {/* Hero Section */}
       <section className="text-center py-12 ">
         <img
-          src="/assets/images/profile.png"
+          src="/profile.png"
           alt="Profile"
           className="w-20 h-20 rounded-full mx-auto"
         />
