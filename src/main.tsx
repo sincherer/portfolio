@@ -3,7 +3,14 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./input.css";
 
-console.log("Main.tsx is rendering...");
+// Handle redirect from 404.html
+(function() {
+  const redirect = sessionStorage.redirect;
+  delete sessionStorage.redirect;
+  if (redirect && redirect !== location.href) {
+    history.replaceState(null, '', redirect.replace(location.origin, ''));
+  }
+})();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <BrowserRouter basename="/portfolio">
