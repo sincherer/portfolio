@@ -1,5 +1,94 @@
 import React, { useState, useEffect } from 'react';
 
+
+interface Certification {
+  id: string;
+  name: string;
+  issuer: string;
+  issue_date: string;
+  url: string;
+}
+
+const certifications: Certification[] = [
+  {
+    id: "1",
+    name: "Design Accessibility",
+    issuer: "uxcel.jpg",
+    issue_date: "2023-09-01",
+    url: "https://app.uxcel.com/certificates/J2H1APW6OAWQ"
+  },
+  {
+    id: "2",
+    name: "CSS for Designers",
+    issuer: "uxcel.jpg",
+    issue_date: "2023-10-01",
+    url: "https://app.uxcel.com/certificates/JBV4Y1HS3GGU"
+  },
+  {
+    id: "3",
+    name: "UX Design Patterns",
+    issuer: "uxcel.jpg",
+    issue_date: "2023-09-01",
+    url: "https://app.uxcel.com/certificates/Z3H0KAFWK2VO"
+  },
+  {
+    id: "4",
+    name: "AI in UI/UX Design",
+    issuer: "uxcel.jpg",
+    issue_date: "2023-11-01",
+    url: "https://app.uxcel.com/certificates/DE6BXL81SLBL"
+  },
+  {
+    id: "5",
+    name: "Service Design",
+    issuer: "uxcel.jpg",
+    issue_date: "2023-10-01",
+    url: "https://app.uxcel.com/certificates/9X6YRG5QKIWW"
+  },
+  {
+    id: "6",
+    name: "Design Mentorship Mastery",
+    issuer: "uxcel.jpg",
+    issue_date: "2023-09-01",
+    url: "https://app.uxcel.com/certificates/BRRRMSFZ9CRW"
+  },
+  {
+    id: "7",
+    name: "Google UX Design Specialization",
+    issuer: "Google.svg",
+    issue_date: "2022-07-01",
+    url: "https://www.coursera.org/account/accomplishments/specialization/certificate/CJJRPFVZZT7N"
+  },
+  {
+    id: "8",
+    name: "Full Stack Web Development with Angular",
+    issuer: "Coursera.png",
+    issue_date: "2022-07-08",
+    url: "https://www.coursera.org/account/accomplishments/specialization/certificate/U4L3QUL2PD7N"
+  },
+  {
+    id: "9",
+    name: "UX Writing",
+    issuer: "uxcel.jpg",
+    issue_date: "2023-09-01",
+    url: "https://app.uxcel.com/certificates/H6KN2MVEECY4"
+  },
+  {
+    id: "10",
+    name: "UI Components I",
+    issuer: "uxcel.jpg",
+    issue_date: "2023-09-01",
+    url: "https://app.uxcel.com/certificates/96C7CV04Z8EY"
+  },
+  {
+    id: "11",
+    name: "Color Psychology",
+    issuer: "uxcel.jpg",
+    issue_date: "2023-09-01",
+    url: "https://app.uxcel.com/certificates/CSL2Q6MDDTHI"
+  }
+];
+
 interface Experience {
   title: string;
   company: string;
@@ -400,6 +489,42 @@ const AboutPage: React.FC = () => {
             ))}
           </ul>
         </section>
+
+        {/* Certifications Section */}
+        <section className="mt-16 animate-slide-up" style={{ animationDelay: '1000ms' }}>
+          <h2 className="text-2xl font-bold text-gray-900 mb-6 animate-text-focus">Certifications</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {certifications.map((cert, index) => (
+              <a
+                key={cert.id}
+                href={cert.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group p-4 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-all duration-300 animate-fade-in"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="flex items-center space-x-3 mb-2">
+                  <div className="flex-shrink-0">
+                    <img
+                      src={`./assets/images/cert-logos/${cert.issuer.toLowerCase()} `}
+                      alt={`${cert.issuer} logo`}
+                      className="w-8 h-8 object-contain"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">
+                      {cert.name}
+                    </h3>
+                    <p className="text-sm text-gray-500">{cert.issuer}</p>
+                  </div>
+                </div>
+                <div className="text-xs text-gray-500">
+                  Issued {new Date(cert.issue_date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
       </main>
 
       {/* Footer */}
@@ -411,3 +536,4 @@ const AboutPage: React.FC = () => {
 };
 
 export default AboutPage;
+
