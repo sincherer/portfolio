@@ -26,7 +26,7 @@ const BlogPost = () => {
   return (
     <article className="max-w-3xl mx-auto p-6">
       <div className="mb-8">
-        <a href="/articles" className="text-blue-600 font-medium mt-2 inline-block">← Back to blog</a>
+        <a href="/articles" className="text-blue-600 hover:underline">← Back to blog</a>
       </div>
       <header className="mb-8">
         <time dateTime={post.date} className="text-gray-500 text-sm">

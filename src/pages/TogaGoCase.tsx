@@ -41,7 +41,7 @@ const TogaGoCase = () => {
         {/* Problem Statement */}
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold">The Challenge</h2>
-          <div className="space-y-4">
+          <div className="space-y-4 bg-gray-50 p-6 rounded-lg">
             <p className="text-gray-600">
               TogaGo's existing website faced several critical issues that were impacting user experience and conversion rates:
             </p>
@@ -55,9 +55,9 @@ const TogaGoCase = () => {
         </section>
 
         {/* Research & Analysis */}
-        <section className="space-y-4">
+        <section className="space-y-4 ">
           <h2 className="text-2xl font-semibold">Research & Analysis</h2>
-          <div className="space-y-4">
+          <div className="space-y-4  bg-gray-50 p-6 rounded-lg">
             <p className="text-gray-600">
               Our research phase involved:
             </p>
@@ -73,7 +73,7 @@ const TogaGoCase = () => {
         {/* Solution */}
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold">The Solution</h2>
-          <div className="space-y-4">
+          <div className="space-y-4 bg-gray-50 p-6 rounded-lg">
             <h3 className="font-medium">1. Streamlined Booking Process</h3>
             <p className="text-gray-600">
               Reduced the booking steps from 7 to 4 by combining related actions and eliminating redundant confirmations.
@@ -116,11 +116,26 @@ const TogaGoCase = () => {
         </section>
 
         {/* Learnings */}
-        <section className="space-y-4">
+        <section className="space-y-4 ">
           <h2 className="text-2xl font-semibold">Key Learnings</h2>
-          <p className="text-gray-600">
+          <p className="text-gray-600  bg-gray-50 p-6 rounded-lg">
             This project reinforced the importance of user-centered design and the value of thorough research in creating effective solutions. The iterative design process and continuous user feedback were crucial in achieving significant improvements in both user experience and business metrics.
           </p>
+
+
+        {/* Image */}
+        <div className="grid grid-cols-1 gap-8">
+              <div>
+                <h3 className="text-lg font-medium mb-3">Before</h3>
+                <div className="bg-gray-200 rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/TogaGo.png"
+                    alt="TogaGo demostation"
+                    className="rounded-lg max-w-full h-auto"
+                  />
+                </div>
+              </div>
+              </div>
         </section>
       </div>
     </div>

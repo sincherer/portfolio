@@ -83,16 +83,34 @@ const KnowledgeBaseCase = () => {
               <div>
                 <h3 className="text-lg font-medium mb-3">Query Processing</h3>
                 <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
-                  [Query Matching Flow Diagram]
+                <img
+                    src="../assets/images/knowledgebase.PNG"
+                    alt="After navigation redesign"
+                    className="rounded-lg max-w-full h-auto"
+                  />
                 </div>
               </div>
               <div>
                 <h3 className="text-lg font-medium mb-3">Knowledge Management</h3>
                 <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
-                  [Database Schema Visualization]
+                <img
+                    src="../assets/images/database.PNG"
+                    alt="After navigation redesign"
+                    className="rounded-lg max-w-full h-auto"
+                  />
                 </div>
               </div>
             </div>
+            <div>
+                <h3 className="text-lg font-medium mb-3">Demo</h3>
+                <div className="bg-gray-200 rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/Sloth X.gif"
+                    alt="After navigation redesign"
+                    className="rounded-lg max-w-full h-auto"
+                  />
+                </div>
+              </div>
           </div>
         </section>
 

@@ -81,24 +81,27 @@ const PulsifiCase01 = () => {
                 <li>Maintains consistent visibility</li>
               </ul>
             </div>
-            <div className="grid md:grid-cols-2 gap-8">
+
+           
+            {/* Before & After Comparison */}
+            <div className="grid grid-cols-1 gap-8">
               <div>
                 <h3 className="text-lg font-medium mb-3">Before</h3>
-                <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
-                <img
-                   src="../assets/images/job-before.jpg"
-                  alt="Profile"
-                  className=" rounded-lg mx-auto"
+                <div className="bg-gray-200 rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/job-before.jpg"
+                    alt="Before navigation redesign"
+                    className="rounded-lg max-w-full h-auto"
                   />
                 </div>
               </div>
               <div>
                 <h3 className="text-lg font-medium mb-3">After</h3>
-                <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
-                <img
-                   src="../assets/images/job-after.jpg"
-                  alt="Profile"
-                  className=" rounded-lg mx-auto"
+                <div className="bg-gray-200 rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/job-after.jpg"
+                    alt="After navigation redesign"
+                    className="rounded-lg max-w-full h-auto"
                   />
                 </div>
               </div>

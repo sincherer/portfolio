@@ -14,12 +14,12 @@ const PulsifiCase02 = () => {
           <div className="flex flex-wrap gap-2 justify-center mt-4">
             <span className="text-sm px-3 py-1 bg-gray-100 text-gray-600 rounded-full">Analytics</span>
             <span className="text-sm px-3 py-1 bg-gray-100 text-gray-600 rounded-full">SaaS</span>
-            <span className="text-sm px-3 py-1 bg-gray-100 text-gray-600 rounded-full">AI</span>
+            <span className="text-sm px-3 py-1 bg-gray-100 text-gray-600 rounded-full">Enterprise</span>
           </div>
           <div className="flex flex-wrap gap-2 justify-center mt-2">
-            <span className="text-sm px-3 py-1 bg-cyan-50 text-cyan-600 rounded-full">Google Analytics</span>
-            <span className="text-sm px-3 py-1 bg-cyan-50 text-cyan-600 rounded-full">Looker Studio</span>
-            <span className="text-sm px-3 py-1 bg-cyan-50 text-cyan-600 rounded-full">GTM</span>
+            <span className="text-sm px-3 py-1 bg-blue-50 text-blue-600 rounded-full">Google Analytics</span>
+            <span className="text-sm px-3 py-1 bg-blue-50 text-blue-600 rounded-full">Looker Studio</span>
+            <span className="text-sm px-3 py-1 bg-blue-50 text-blue-600 rounded-full">GTM</span>
           </div>
         </div>
 

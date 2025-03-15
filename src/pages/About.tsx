@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface Experience {
   title: string;
   company: string;
   duration: string;
   description: JSX.Element;
+  highlights: string[];
+  logo?: string; // Optional logo path
 }
 
 const experiences: Experience[] = [
     {
         title: 'Senior UI/UX Designer',
         company: 'Pulsifi Pte. Ltd',
-        duration: '2023 - Present',
+        duration: 'May 2023 - Present',
+        logo: '../assets/images/company-logos/pulsifi_logo.jpg',
+        highlights: [
+          'Led user-centered interface design across platforms',
+          'Developed scalable design system for NG-ZORRO',
+          'Integrated analytics (GA/GTM) for data-driven optimization',
+          'Created Looker Studio dashboard for performance metrics',
+          'Automated Google Sheets workflows for operational efficiency'
+        ],
         description: (
             <>
           <p>Led the design and implementation of user-centered interfaces,
@@ -31,7 +41,14 @@ const experiences: Experience[] = [
       {
         title: 'Senior UI/UX Designer',
         company: 'TOGL Technology Sdn Bhd',
-        duration: '2022 - 2023',
+        duration: 'Aug 2022 - May 2023',
+        logo: '../assets/images/company-logos/togl logo.jpg',
+        highlights: [
+          'Led end-to-end user experience design and strategy',
+          'Collaborated with cross-functional teams for brand integrity',
+          'Developed wireframes and prototypes using Figma',
+          'Conducted design walkthroughs for team alignment'
+        ],
         description: (
             <>
           <p>Owned the end-to-end user experience, ensuring consistency and 
@@ -52,7 +69,14 @@ const experiences: Experience[] = [
   {
     title: 'UI/UX Designer',
     company: 'GoKudos Sdn Bhd',
-    duration: '2021 - 2022',
+    duration: 'Oct 2021 - Aug 2022',
+    logo: '../assets/images/company-logos/gokudoslogo.jpg',
+    highlights: [
+      'Redesigned and restructured SaaS platform',
+      'Created user-centric designs with Figma',
+      'Developed engaging marketing materials',
+      'Executed feature rollouts within deadlines'
+    ],
     description: (
         <>
       <p>Redesigned and restructured the company's SaaS platform
@@ -73,7 +97,14 @@ const experiences: Experience[] = [
   {
     title: 'Senior Marketing Exec.',
     company: 'SICK Sensor Malaysia',
-    duration: '2020 - 2021',
+    duration: 'Nov 2020 - June 2021',
+    logo: '../assets/images/company-logos/sick-logo.png',
+    highlights: [
+      'Executed high-impact marketing plans',
+      'Developed social media and website strategies',
+      'Led creation of marketing materials',
+      'Managed visual aspects of campaigns'
+    ],
     description: (
         <>
       <p>Supported the Engagement Manager, Sales, and Product teams in
@@ -94,7 +125,15 @@ const experiences: Experience[] = [
   {
     title: 'Branding Specialist',
     company: 'KHP Steel Product (M) Sdn Bhd',
-    duration: '2018 - 2020',
+    duration: 'Jan 2018 - Nov 2020',
+    logo: '../assets/images/company-logos/kextra.png',
+    highlights: [
+      'Led integrated marketing strategies',
+      'Managed B2B and B2C brand portfolios',
+      'Developed high-impact branding tools',
+      'Implemented digital marketing campaigns',
+      'Launched new concept store and factory'
+    ],
     description: (
         <>
       <p>Developed and executed integrated marketing communication strategies, 
@@ -108,7 +147,7 @@ const experiences: Experience[] = [
         <br/>
       <p>Led the annual marketing and communication plan, 
         aligning strategies with manufacturing priorities and revenue targets. 
-        Played a key role in the company’s expansion, successfully managing the launch 
+        Played a key role in the company's expansion, successfully managing the launch 
         of the 5th concept store and factory.</p>  
         <br/>
       <p>Implemented targeted marketing strategies to drive revenue growth,
@@ -120,7 +159,14 @@ const experiences: Experience[] = [
 {
     title: 'Senior UI/UX Designer',
     company: 'Intelligent Earnings Sdn Bh',
-    duration: '2016 - 2017',
+    duration: 'Jan 2016 - Dec 2017',
+    logo: '../assets/images/company-logos/intelligent-earning.png',
+    highlights: [
+      'Led design vision and product direction',
+      'Enhanced hiring process and team building',
+      'Developed diverse mobile applications',
+      'Defined company branding and visual direction'
+    ],
     description: (
         <>
       <p>Led the design vision and set the product direction, 
@@ -149,7 +195,14 @@ const experiences: Experience[] = [
   {
     title: 'Senior Designer',
     company: 'OPPO Electronics Sdn Bhd',
-    duration: '2013 - 2015',
+    duration: 'Jan 2013 - Dec 2015',
+    logo: '../assets/images/company-logos/oppo_logo.png',
+    highlights: [
+      'Led Malaysia advertising concept',
+      'Managed team of three designers',
+      'Developed websites and Android OS visuals',
+      'Designed POSM concepts'
+    ],
     description:(
         <>
       <p>Led Malaysia’s advertising concept and visual direction, 
@@ -169,7 +222,14 @@ const experiences: Experience[] = [
   {
     title: 'Creative Director',
     company: 'JT Apps Sdn Bhd',
-    duration: '2012 - 2013',
+    duration: 'July 2012 - Jan 2013',
+    logo: '../assets/images/company-logos/jtapps.png',
+    highlights: [
+      'Led team of three designers',
+      'Built brand identities for major clients',
+      'Created animation and visual storytelling',
+      'Directed photography and videography'
+    ],
     description: (
         <>
       <p>Grew from a Multimedia Designer to Creative Director, 
@@ -219,49 +279,96 @@ const achievements = [
 ];
 
 const AboutPage: React.FC = () => {
+  const [expandedDescriptions, setExpandedDescriptions] = useState<{ [key: number]: boolean }>({});
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
+  const toggleDescription = (index: number) => {
+    setExpandedDescriptions(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
   return (
-    <div className=" min-h-screen">
-     
+    <div className={`min-h-screen transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
       {/* Main Content */}
       <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         {/* About Section */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900">About Me</h2>
-          <p className="mt-4 text-gray-600">
+        <section className="mb-16 animate-fade-in">
+          <h2 className="text-2xl font-bold text-gray-900 animate-text-focus">About Me</h2>
+          <p className="mt-4 text-gray-600 animate-slide-in">
             I am a passionate UI/UX designer with over a decade of experience in creating user-centered designs for web and mobile applications. My expertise lies in transforming complex problems into intuitive and delightful user experiences. I enjoy collaborating with cross-functional teams to deliver impactful solutions that drive business success.
           </p>
         </section>
 
         {/* Language Section */}
-        <div className=" mb-12">
-          <h1 className="text-2xl font-bold mb-4">Languages</h1>
-          <div className="flex flex-wrap gap-2  mt-4">
-            <span className="text-sm px-3 py-1 bg-blue-100 text-blue-600 rounded-full">Mandarin</span>
-            <span className="text-sm px-3 py-1 bg-blue-100 text-blue-600 rounded-full">English</span>
-            <span className="text-sm px-3 py-1 bg-blue-100 text-blue-600 rounded-full">Malay</span>
+        <div className="mb-12 animate-slide-up" style={{ animationDelay: '200ms' }}>
+          <h1 className="text-2xl font-bold mb-4 animate-text-focus">Languages</h1>
+          <div className="flex flex-wrap gap-2 mt-4">
+            <span className="text-sm px-3 py-1 bg-blue-100 text-blue-600 rounded-full transition-transform hover:scale-105">Mandarin</span>
+            <span className="text-sm px-3 py-1 bg-blue-100 text-blue-600 rounded-full transition-transform hover:scale-105">English</span>
+            <span className="text-sm px-3 py-1 bg-blue-100 text-blue-600 rounded-full transition-transform hover:scale-105">Malay</span>
           </div>
         </div>
 
         {/* Experience Section */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900">Experience</h2>
-          <div className="mt-6 space-y-8">
+        <section className="mb-16 animate-slide-up" style={{ animationDelay: '400ms' }}>
+          <h2 className="text-2xl font-bold text-gray-900 mb-6 animate-text-focus">Experience</h2>
+          <div className="space-y-6">
             {experiences.map((exp, index) => (
-              <div key={index} className="border-l-2 border-gray-200 pl-6">
-                <h3 className="text-xl font-semibold text-gray-900">{exp.title}</h3>
-                <p className="mt-1 text-sm text-gray-500">{exp.company} | {exp.duration}</p>
-                <p className="mt-2 text-gray-600">{exp.description}</p>
+              <div key={index} 
+                className="p-6 rounded-lg border border-gray-200 bg-white transition-all duration-300 hover:shadow-md"
+                style={{ animationDelay: `${(index + 3) * 200}ms` }}
+              >
+                <div className="flex items-center space-x-4 mb-4">
+                  <img 
+                    src={exp.logo || '/src/assets/images/company-logos/placeholder-logo.svg'} 
+                    alt={`${exp.company} logo`} 
+                    className="w-10 h-10 object-contain"
+                  />
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 animate-slide-in">{exp.title}</h3>
+                    <p className="text-sm text-gray-500">{exp.company} | {exp.duration}</p>
+                  </div>
+                </div>
+                
+                {/* Highlights */}
+                <ul className="mt-4 space-y-2">
+                  {exp.highlights.map((highlight, i) => (
+                    <li key={i} className="flex items-start space-x-2 animate-slide-in" style={{ animationDelay: `${i * 100}ms` }}>
+                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-blue-500 mt-2"></span>
+                      <span className="text-gray-700">{highlight}</span>
+                    </li>
+                  ))}                  
+                </ul>
+
+                {/* Description with Read More */}
+                <div className="mt-4 pt-4 border-t border-gray-200 text-gray-600">
+                  <div className={`transition-all duration-300 ${!expandedDescriptions[index] ? 'line-clamp-2' : ''}`}>
+                    {exp.description}
+                  </div>
+                  <button
+                    onClick={() => toggleDescription(index)}
+                    className="text-blue-600 hover:text-blue-800 font-medium mt-2 transition-colors"
+                  >
+                    {expandedDescriptions[index] ? 'Read less' : 'Read more'}
+                  </button>
+                </div>
               </div>
             ))}
           </div>
         </section>
 
         {/* Skills Section */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900">Skills</h2>
+        <section className="mb-16 animate-slide-up" style={{ animationDelay: '600ms' }}>
+          <h2 className="text-2xl font-bold text-gray-900 animate-text-focus">Skills</h2>
           <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {skills.map((skill, index) => (
-              <li key={index} className="flex items-center space-x-2">
+              <li key={index} className="flex items-center space-x-2 animate-slide-in" style={{ animationDelay: `${index * 100}ms` }}>
                 <span className="h-2 w-2 rounded-full bg-indigo-600"></span>
                 <span className="text-gray-700">{skill}</span>
               </li>
@@ -270,11 +377,11 @@ const AboutPage: React.FC = () => {
         </section>
 
         {/* Achievements Section */}
-        <section>
-          <h2 className="text-2xl font-bold text-gray-900">Achievements</h2>
+        <section className="animate-slide-up" style={{ animationDelay: '800ms' }}>
+          <h2 className="text-2xl font-bold text-gray-900 animate-text-focus">Achievements</h2>
           <ul className="mt-4 space-y-4">
             {achievements.map((achievement, index) => (
-              <li key={index} className="flex items-start space-x-2">
+              <li key={index} className="flex items-start space-x-2 animate-slide-in" style={{ animationDelay: `${index * 200}ms` }}>
                 <svg
                   className="h-5 w-5 flex-shrink-0 text-green-500"
                   fill="none"
@@ -296,7 +403,7 @@ const AboutPage: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <footer className="text-center text-gray-500 text-sm mt-12">
+      <footer className="text-center text-gray-500 text-sm mt-12 animate-fade-in" style={{ animationDelay: '1000ms' }}>
         <p>© 2025 SinCher. All rights reserved.</p>
       </footer>
     </div>

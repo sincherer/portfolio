@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   --background: #ffffff;
@@ -21,25 +19,21 @@
   }
 }
 
-@layer base {
-  body {
-    background: var(--background);
-    color: var(--foreground);
-    font-family: var(--font-sans);
-    cursor: none !important;
-  }
-
-  * {
-    cursor: none !important;
-  }
-
-  a, button, [role="button"] {
-    cursor: none !important;
-  }
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  cursor: none !important;
 }
 
-@layer components {
-  div {
-    @apply animate-fade-right animate-once animate-ease-out animate-delay-1000;
-  }
+* {
+  cursor: none !important;
+}
+
+a, button, [role="button"] {
+  cursor: none !important;
+}
+
+div:hover {
+  @apply animate-fade-right animate-thrice animate-ease-out animate-delay-1000;
 }

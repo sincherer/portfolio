@@ -6,57 +6,49 @@ const projects = [
     title: "Pulsifi SaaS Navigation",
     description: "Role | Senior UI/UX Designer",
     link: "pulsifi-case-1",
-    icon: "💻",
+    icon: "💻 ",
     tags: ["UX Design", "SaaS", "AI"],
-    tools: ["Figma", "React", "Angular", "Ant-Design", "NG-ZORRO"]
-  },
-  {
-    title: "TogaGo Website Redesign",
-    description: "Role | UI/UX Designer",
-    link: "togago-case",
-    icon: "✈️",
-    tags: ["UX Design", "Web App", "Travel"],
-    tools: ["Figma", "Sketch"]
+    tools: ["Figma", "React", "TailwindCSS"]
   },
   {
     title: "Pulsifi Analytics Integration",
     description: "Role | Senior UI/UX Designer",
     link: "pulsifi-case-2",
     icon: "📊",
-    tags: ["Analytics", "SaaS", "AI"],
-    tools: ["Google Analytics", "Looker Studio", "GTM"]
+    tags: ["Analytics", "SaaS", "Data"],
+    tools: ["Google Analytics", "Looker Studio", "GTM", "Visualization"]
   },
   {
-    title: "Figma-Google Sheets Automation",
+    title: "Figma Automation Integration",
     description: "Role | Senior UI/UX Designer",
-    link: "pulsifi-case-3",
-    icon: "🔄",
-    tags: ["Automation", "Design Ops", "Productivity"],
-    tools: ["Figma", "Google Sheets"]
+    link: "pulsifi-case-2",
+    icon: "⚡",
+    tags: ["Automation", "Pulsifi", "AI"],
+    tools: ["Figma", "Google Sheet"]
   },
   {
-    title: "Knowledge Base Chatbot",
+    title: "Knowledge Base Chat bot",
     description: "Role | Creator",
     link: "knowledge-base-case",
-    icon: "🤖",
-    tags: ["AI", "Chatbot"],
+    icon: "💬",
+    tags: ["AI", "Database", "Chatbot"],
     tools: ["React", "Ant Design X", "Supabase"]
   },
   {
-    title: "GoKudos",
-    description: "The operating system that powers our Planetaria space shuttles.",
-    link: "gokudos-case",
-    icon: "📜",
-    tags: ["UX Design","SaaS", "Product Planning"],
-    tools: ["Figma", "Wordpress", "Powerpoint", "Adobe suits"]
+    title: "TogaGo",
+    description: "Role | UIUX Designer",
+    link: "togago-case",
+    icon: "🛫",
+    tags: ["UX Design", "Web App", "Mobile App"],
+    tools: ["Figma", "Sketch"]
   },
   {
-    title: "OpenShuttle",
-    description: "The schematics for the first rocket I designed that successfully made it to orbit.",
-    link: "github.com",
-    icon: "🔵",
-    tags: ["Engineering", "Space"],
-    tools: ["CAD", "Python", "MATLAB"]
+    title: "GoKudos SaaS Platform Design & Development",
+    description: "A case study on designing and developing a comprehensive SaaS platform",
+    link: "GoKudos-case",
+    icon: "👔",
+    tags: ["UIUX Design", "SaaS", "Product Planning"],
+    tools: ["Figma", "Wordpress", "Powerpoint", "Adobe Suits"]
   },
 ];
 
@@ -78,7 +70,7 @@ const Project = () => {
         <div className="flex flex-wrap gap-2 justify-center mt-6">
           <button
             onClick={() => setSelectedTag("")}
-            className={`px-3 py-1 rounded-full text-sm ${!selectedTag ? 'bg-black text-white' : 'bg-gray-200 text-gray-700'}`}
+            className={`px-3 py-1 rounded-full text-sm ${!selectedTag ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'}`}
           >
             All
           </button>
@@ -86,16 +78,16 @@ const Project = () => {
             <button
               key={tag}
               onClick={() => setSelectedTag(tag)}
-              className={`px-3 py-1 rounded-full text-sm ${selectedTag === tag ? 'bg-black text-white' : 'bg-gray-200 text-gray-700'}`}
+              className={`px-3 py-1 rounded-full text-sm ${selectedTag === tag ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'}`}
             >
               {tag}
             </button>
           ))}
         </div>
       </div>
-      <div className="grid md:grid-cols-2 gap-6 mt-10 max-w-4xl mx-auto animate-fade-up">
+      <div className="grid md:grid-cols-1 gap-6 mt-10 max-w-4xl mx-auto animate-fade-up">
         {filteredProjects.map((project, index) => (
-          <div key={index} className="p-6 rounded-lg flex items-start space-x-4 animate-fade-up hover:bg-slate-100  hover:shadow-md transition-shadow">
+          <div key={index} className="p-6 rounded-lg flex items-start space-x-4 animate-fade-up bg-white shadow-sm hover:shadow-md transition-shadow">
             <div className="text-3xl">{project.icon}</div>
             <div>
               <h2 className="text-lg font-semibold">{project.title}</h2>
@@ -107,7 +99,7 @@ const Project = () => {
               </div>
               <div className="flex flex-wrap gap-2 mt-2">
                 {project.tools.map(tool => (
-                  <span key={tool} className="text-xs px-2 py-1 bg-cyan-50 text-cyan-600 rounded-full">{tool}</span>
+                  <span key={tool} className="text-xs px-2 py-1 bg-blue-50 text-blue-600 rounded-full">{tool}</span>
                 ))}
               </div>
               <Link to={`${project.link}`} className="text-blue-600 font-medium mt-2 inline-block">View project →</Link>
