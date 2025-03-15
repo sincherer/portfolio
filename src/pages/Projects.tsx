@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "./Projects.css";
 
 const projects = [
   {
@@ -85,9 +86,16 @@ const Project = () => {
           ))}
         </div>
       </div>
-      <div className="grid md:grid-cols-1 gap-6 mt-10 max-w-4xl mx-auto animate-fade-up">
+      <div className="grid md:grid-cols-1 gap-6 mt-10 max-w-4xl mx-auto">
         {filteredProjects.map((project, index) => (
-          <div key={index} className="p-6 rounded-lg flex items-start space-x-4 animate-fade-up bg-white shadow-sm hover:shadow-md transition-shadow">
+          <div 
+            key={index} 
+            className="p-6 rounded-lg flex items-start space-x-4 bg-white shadow-sm hover:shadow-md transition-all duration-300 ease-in-out"
+            style={{
+              opacity: 0,
+              animation: `fadeIn 0.5s ease-out ${index * 0.15}s forwards`
+            }}
+          >
             <div className="text-3xl">{project.icon}</div>
             <div>
               <h2 className="text-lg font-semibold">{project.title}</h2>
@@ -102,7 +110,7 @@ const Project = () => {
                   <span key={tool} className="text-xs px-2 py-1 bg-blue-50 text-blue-600 rounded-full">{tool}</span>
                 ))}
               </div>
-              <Link to={`${project.link}`} className="text-blue-600 font-medium mt-2 inline-block">View project →</Link>
+              <Link to={`${project.link}`} className="text-blue-600 font-medium mt-2 inline-block hover:text-blue-800 transition-colors">View project →</Link>
             </div>
           </div>
         ))}
