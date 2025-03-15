@@ -109,6 +109,62 @@ const GoKudosCaseStudy = () => {
             
         </section>
 
+        {/* Marketing Website Section */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-semibold mb-6">Marketing Website Development</h2>
+          <div className="bg-gray-50 p-6 rounded-lg">
+            <p className="text-gray-800 mb-4">
+              To highlight GoKudos' product features, I developed a marketing website using WordPress. The website includes:
+            </p>
+            <ul className="list-disc list-inside space-y-2 text-gray-700">
+              <li>A clean and professional design to reflect the brand identity</li>
+              <li>Highlight sections for key features like CRM, task management, and reporting</li>
+              <li>A contact form for potential clients to reach out</li>
+              <li>SEO optimization for better visibility</li>
+            </ul>
+          </div>
+
+        
+        </section>
+
+        {/* Results Section */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-semibold mb-6">The Impact</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="text-xl font-medium mb-3">Efficiency</h3>
+              <p className="text-gray-700">
+                Streamlined workflows for employees and managers
+              </p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="text-xl font-medium mb-3">User Satisfaction</h3>
+              <p className="text-gray-700">
+                Positive feedback from early users on the platform's usability
+              </p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="text-xl font-medium mb-3">Scalability</h3>
+              <p className="text-gray-700">
+                Ready to accommodate future feature additions and growing user base
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Key Learnings Section */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-semibold mb-6">Key Learnings</h2>
+          <div className="bg-gray-50 p-6 rounded-lg">
+            <ul className="list-disc list-inside space-y-2 text-gray-700">
+              <li>Selecting the right design system accelerates development</li>
+              <li>Clear communication is essential when working without a PM</li>
+              <li>Iterative testing ensures a user-friendly interface</li>
+              <li>A marketing website complements the SaaS platform by attracting potential clients</li>
+            </ul>
+          </div>
+        </section>
+
         {/* UI/UX Design Section */}
         <section className="mb-16">
         <h2 className="text-2xl font-semibold mb-6">Sitemap Creation</h2>
@@ -312,61 +368,7 @@ const GoKudosCaseStudy = () => {
          </div>
         </section>
 
-        {/* Marketing Website Section */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-semibold mb-6">Marketing Website Development</h2>
-          <div className="bg-gray-50 p-6 rounded-lg">
-            <p className="text-gray-800 mb-4">
-              To highlight GoKudos' product features, I developed a marketing website using WordPress. The website includes:
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700">
-              <li>A clean and professional design to reflect the brand identity</li>
-              <li>Highlight sections for key features like CRM, task management, and reporting</li>
-              <li>A contact form for potential clients to reach out</li>
-              <li>SEO optimization for better visibility</li>
-            </ul>
-          </div>
-
         
-        </section>
-
-        {/* Results Section */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-semibold mb-6">The Impact</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-medium mb-3">Efficiency</h3>
-              <p className="text-gray-700">
-                Streamlined workflows for employees and managers
-              </p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-medium mb-3">User Satisfaction</h3>
-              <p className="text-gray-700">
-                Positive feedback from early users on the platform's usability
-              </p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-medium mb-3">Scalability</h3>
-              <p className="text-gray-700">
-                Ready to accommodate future feature additions and growing user base
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Key Learnings Section */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-semibold mb-6">Key Learnings</h2>
-          <div className="bg-gray-50 p-6 rounded-lg">
-            <ul className="list-disc list-inside space-y-2 text-gray-700">
-              <li>Selecting the right design system accelerates development</li>
-              <li>Clear communication is essential when working without a PM</li>
-              <li>Iterative testing ensures a user-friendly interface</li>
-              <li>A marketing website complements the SaaS platform by attracting potential clients</li>
-            </ul>
-          </div>
-        </section>
       </div>
     </div>
   );
