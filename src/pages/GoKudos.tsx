@@ -30,6 +30,21 @@ const GoKudosCaseStudy = () => {
           </div>
         </div>
 
+        {/* Project Overview Section */}
+        <section className="mb-16">
+        <div className="grid grid-cols-1 gap-8">
+              <div>
+                <div className=" rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/gokudos/PixelBook Go.svg"
+                    alt="Before navigation redesign"
+                    className="rounded-lg max-w-full h-auto"
+                  />
+                </div>
+            </div>
+            </div>
+        </section>
+
         {/* Problem Statement Section */}
         <section className="mb-16">
           <h2 className="text-2xl font-semibold mb-6">The Challenge</h2>
@@ -90,21 +105,211 @@ const GoKudosCaseStudy = () => {
                 <li><strong>Dashboard:</strong> View total, pending, overdue, and completed tasks</li>
               </ul>
             </div>
-            <div className="grid md:grid-cols-2 gap-8">
+            </div>
+            
+        </section>
+
+        {/* UI/UX Design Section */}
+        <section className="mb-16">
+        <h2 className="text-2xl font-semibold mb-6">Sitemap Creation</h2>
+        <div className="grid grid-cols-1 gap-8">
               <div>
-                <h3 className="text-lg font-medium mb-3">Initial Wireframes</h3>
-                <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
-                  [Wireframe Screenshot]
+                <div className="bg-white rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/gokudos/sitemap.svg"
+                    alt="Before navigation redesign"
+                    className="rounded-lg max-w-full h-auto"
+                  />
                 </div>
-              </div>
+            </div>
+         </div>
+
+        <h2 className="text-2xl font-semibold mb-6">Wireframe Creation</h2>
+        <div className="grid grid-cols-1 gap-8">
               <div>
-                <h3 className="text-lg font-medium mb-3">Final Design</h3>
-                <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
-                  [Final Design Screenshot]
+                <div className="bg-white rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/gokudos/gokudos_wireframe.svg"
+                    alt="Before navigation redesign"
+                    className="rounded-lg max-w-full h-auto"
+                  />
+                </div>
+            </div>
+         </div>
+        
+         <h2 className="text-2xl font-semibold mb-6">Design System Creation</h2>
+        <div className="grid grid-cols-1 gap-8">
+              <div>
+                <div className="bg-white rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/gokudos/Color.svg"
+                    alt="Before navigation redesign"
+                    className="rounded-lg max-w-full h-auto"
+                  />
+                </div>
+            </div>
+         </div>
+
+         <div className="grid grid-cols-1 gap-8">
+              <div>
+                <div className="bg-white rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/gokudos/Fonts.svg"
+                    alt="Before navigation redesign"
+                    className="rounded-lg max-w-full h-auto"
+                  />
+                </div>
+            </div>
+         </div>
+
+         <div className="grid grid-cols-1 gap-8">
+              <div>
+                <div className="bg-white rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/gokudos/Shadows.svg"
+                    alt="Before navigation redesign"
+                    className="rounded-lg max-w-full h-auto"
+                  />
                 </div>
               </div>
             </div>
+
+        <h2 className="text-2xl font-semibold mb-6">Exception Pages</h2>
+        <div className="grid grid-cols-1 gap-8">
+              <div>
+                <div className="bg-white rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/gokudos/exception/401.svg"
+                    alt="401"
+                    className="rounded-lg max-w-full h-auto"
+                  />
+                </div>
+            </div>
+         </div>
+         <div className="grid grid-cols-1 gap-8">
+              <div>
+                <div className="bg-white rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/gokudos/exception/404 Page.svg"
+                    alt="404"
+                    className="rounded-lg max-w-full h-auto"
+                  />
+                </div>
+            </div>
+         </div>
+         <div className="grid grid-cols-1 gap-8">
+              <div>
+                <div className="bg-white rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/gokudos/exception/504.svg"
+                    alt="504"
+                    className="rounded-lg max-w-full h-auto"
+                  />
+                </div>
+            </div>
+         </div>
+         <div className="grid grid-cols-1 gap-8">
+              <div>
+                <div className="bg-white rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/gokudos/exception/505.svg"
+                    alt="505"
+                    className="rounded-lg max-w-full h-auto"
+                  />
+                </div>
+            </div>
+         </div>
+         <div className="grid grid-cols-1 gap-8">
+              <div>
+                <div className="bg-white rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/gokudos/exception/Under Maintanence.svg"
+                    alt="Under Maintanence"
+                    className="rounded-lg max-w-full h-auto"
+                  />
+                </div>
+            </div>
+         </div>
+
+        <h2 className="text-2xl font-semibold mb-6">Module Showcase</h2>
+        <div className="grid grid-cols-1 gap-8">
+              <div>
+                <div className="bg-white rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/gokudos/module/GanttChart.svg"
+                    alt="Before navigation redesign"
+                    className="rounded-lg max-w-full h-auto"
+                  />
+                </div>
+            </div>
+         </div>
+
+         <div className="grid grid-cols-1 gap-8">
+              <div>
+                <div className="bg-white rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/gokudos/module/collection.svg"
+                    alt="collection"
+                    className="rounded-lg max-w-full h-auto"
+                  />
+                </div>
+            </div>
+         </div>
+         <div className="grid grid-cols-1 gap-8">
+              <div>
+                <div className="bg-white rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/gokudos/module/customer.svg"
+                    alt="customer"
+                    className="rounded-lg max-w-full h-auto"
+                  />
+                </div>
+            </div>
+         </div>
+         <div className="grid grid-cols-1 gap-8">
+              <div>
+                <div className="bg-white rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/gokudos/module/role-permission.svg"
+                    alt="role-permission"
+                    className="rounded-lg max-w-full h-auto"
+                  />
+                </div>
+            </div>
+         </div>
+         <div className="grid grid-cols-1 gap-8">
+              <div>
+                <div className="bg-white rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/gokudos/module/task-kanban.svg"
+                    alt="task-kanban"
+                    className="rounded-lg max-w-full h-auto"
+                  />
+                </div>
+            </div>
           </div>
+            <div className="grid grid-cols-1 gap-8">
+              <div>
+                <div className="bg-white rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/gokudos/module/Settings.svg"
+                    alt="Settings"
+                    className="rounded-lg max-w-full h-auto"
+                  />
+                </div>
+            </div>
+         </div>
+         <div className="grid grid-cols-1 gap-8">
+              <div>
+                <div className="bg-white rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/gokudos/module/attendance.svg"
+                    alt="attendance"
+                    className="rounded-lg max-w-full h-auto"
+                  />
+                </div>
+            </div>
+         </div>
         </section>
 
         {/* Marketing Website Section */}
@@ -121,6 +326,8 @@ const GoKudosCaseStudy = () => {
               <li>SEO optimization for better visibility</li>
             </ul>
           </div>
+
+        
         </section>
 
         {/* Results Section */}
