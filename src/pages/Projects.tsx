@@ -154,7 +154,7 @@ const Project = () => {
       </div>
 
       {/* Footer */}
-      <div className="p-6 border rounded-lg">
+      <div >
       <footer className="text-center text-gray-500 text-sm mt-12">
         <p>© 2025 SinCher. All rights reserved.</p>
       </footer>
