@@ -18,7 +18,14 @@ const BlogPost = () => {
     return (
       <div className="max-w-3xl mx-auto p-6">
         <h1 className="text-2xl font-bold text-red-600">Blog post not found</h1>
-        <a href="/articles" className="text-blue-600 hover:underline mt-4 inline-block">← Back to blog</a>
+        <div className="mb-8">
+          <button
+            onClick={() => window.history.back()}
+            className="text-blue-600 font-medium mt-2 inline-block cursor-pointer"
+          >
+         ← Back to articles
+        </button>
+      </div>
       </div>
     );
   }
@@ -26,7 +33,14 @@ const BlogPost = () => {
   return (
     <article className="max-w-3xl mx-auto p-6">
       <div className="mb-8">
-        <a href="/articles" className="text-blue-600 hover:underline">← Back to blog</a>
+      <div className="mb-8">
+          <button
+            onClick={() => window.history.back()}
+            className="text-blue-600 font-medium mt-2 inline-block cursor-pointer"
+          >
+         ← Back to articles
+        </button>
+      </div>
       </div>
       <header className="mb-8">
         <time dateTime={post.date} className="text-gray-500 text-sm">

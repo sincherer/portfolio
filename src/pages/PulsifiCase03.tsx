@@ -85,19 +85,19 @@ const PulsifiCase03 = () => {
                 <li>Multi-language support with version control</li>
               </ul>
             </div>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-1 gap-8">
               <div>
-                <h3 className="text-lg font-medium mb-3">Before</h3>
-                <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
-                  [Manual Text Editing Process]
+                
+                <h3 className="text-lg font-medium mb-3">Demostration on the Automation</h3>
+                <div className="bg-gray-200 rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/figma-automation.gif"
+                    alt="Demostration on the Automation"
+                    className="rounded-lg max-w-full h-auto"
+                  />
                 </div>
               </div>
-              <div>
-                <h3 className="text-lg font-medium mb-3">After</h3>
-                <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
-                  [Automated Text Management System]
-                </div>
-              </div>
+             
             </div>
           </div>
         </section>

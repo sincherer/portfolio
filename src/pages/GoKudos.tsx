@@ -11,6 +11,7 @@ const GoKudosCaseStudy = () => {
           >
          ← Back to projects
         </button>
+      
       </div>
 
       <div className="max-w-4xl mx-auto">

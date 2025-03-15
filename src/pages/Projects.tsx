@@ -21,7 +21,7 @@ const projects = [
   {
     title: "Figma Automation Integration",
     description: "Role | Senior UI/UX Designer",
-    link: "pulsifi-case-2",
+    link: "pulsifi-case-3",
     icon: "⚡",
     tags: ["Automation", "Pulsifi", "AI"],
     tools: ["Figma", "Google Sheet"]
