@@ -369,6 +369,7 @@ const achievements = [
 
 const AboutPage: React.FC = () => {
   const [expandedDescriptions, setExpandedDescriptions] = useState<{ [key: number]: boolean }>({});
+  const [expandedSections, setExpandedSections] = useState<{ [key: number]: boolean }>({});
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -377,6 +378,13 @@ const AboutPage: React.FC = () => {
 
   const toggleDescription = (index: number) => {
     setExpandedDescriptions(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
+  const toggleSection = (index: number) => {
+    setExpandedSections(prev => ({
       ...prev,
       [index]: !prev[index]
     }));
@@ -426,7 +434,7 @@ const AboutPage: React.FC = () => {
                 </div>
                 
                 {/* Highlights */}
-                <ul className="mt-4 space-y-2">
+                <ul className={`mt-4 space-y-2 transition-all duration-300 ${!expandedDescriptions[index] ? 'hidden' : ''}`}>
                   {exp.highlights.map((highlight, i) => (
                     <li key={i} className="flex items-start space-x-2 animate-slide-in" style={{ animationDelay: `${i * 100}ms` }}>
                       <span className="inline-block w-1.5 h-1.5 rounded-full bg-blue-500 mt-2"></span>
@@ -515,7 +523,7 @@ const AboutPage: React.FC = () => {
                     <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">
                       {cert.name}
                     </h3>
-                    <p className="text-sm text-gray-500">{cert.issuer}</p>
+                    
                   </div>
                 </div>
                 <div className="text-xs text-gray-500">

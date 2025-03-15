@@ -4,7 +4,12 @@ const TogaGoCase = () => {
   return (
     <div className="min-h-screen p-6 max-w-4xl mx-auto">
         <div className="mb-8">
-        <a href="/projects" className="text-blue-600 font-medium mt-2 inline-block">← Back to projects</a>
+          <button
+            onClick={() => window.history.back()}
+            className="text-blue-600 font-medium mt-2 inline-block cursor-pointer"
+          >
+         ← Back to projects
+        </button>
       </div>
       <div className="mt-12 space-y-8">
         {/* Hero Section */}
