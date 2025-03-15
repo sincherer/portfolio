@@ -12,6 +12,8 @@ import PulsifiCase03 from "./pages/PulsifiCase03";
 import KnowledgeBaseCase from "./pages/KnowledgeBaseCase";
 import TogaGoCase from "./pages/TogaGoCase";
 import GoKudosCaseStudy from "./pages/GoKudos";
+import DesignThinking from "./pages/DesignThinking";
+import AboutCher from "./pages/AboutCher";
 
 const App = () => {
   return (
@@ -20,6 +22,7 @@ const App = () => {
         <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/about/cher" element={<AboutCher />} />
         <Route path="/articles" element={<Blog />} />
         <Route path="/articles/:id" element={<BlogPost />} />
         <Route path="/projects" element={<Project />} />
@@ -29,6 +32,7 @@ const App = () => {
         <Route path="/projects/knowledge-base-case" element={<KnowledgeBaseCase />} />
         <Route path="/projects/togago-case" element={<TogaGoCase />} />
         <Route path="/projects/gokudos-case" element={<GoKudosCaseStudy />} />
+        <Route path="/projects/design-thinking" element={<DesignThinking />} />
       </Routes>
     </Layout>
   );

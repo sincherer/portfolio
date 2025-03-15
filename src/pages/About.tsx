@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-
+import { Link, useLocation } from 'react-router-dom';
+import AboutCher from './AboutCher';
 
 interface Certification {
   id: string;
@@ -55,14 +56,14 @@ const certifications: Certification[] = [
   {
     id: "7",
     name: "Google UX Design Specialization",
-    issuer: "Google.svg",
+    issuer: "google.svg",
     issue_date: "2022-07-01",
     url: "https://www.coursera.org/account/accomplishments/specialization/certificate/CJJRPFVZZT7N"
   },
   {
     id: "8",
     name: "Full Stack Web Development with Angular",
-    issuer: "Coursera.png",
+    issuer: "coursera.png",
     issue_date: "2022-07-08",
     url: "https://www.coursera.org/account/accomplishments/specialization/certificate/U4L3QUL2PD7N"
   },
@@ -349,28 +350,39 @@ const experiences: Experience[] = [
         </>)},
 ];
 
-const skills = [
+const skills: string[] = [
+  'UI/UX Design',
   'User Research',
-  'Wireframing & Prototyping',
-  'Interaction Design',
-  'Visual Design',
-  'Usability Testing',
+  'Wireframing',
+  'Prototyping',
+  'Design Systems',
   'Figma',
-  'Adobe XD',
-  'Sketch',
+  'Adobe Suite',
   'HTML/CSS',
+  'JavaScript',
+  'React',
+  'Angular',
+  'TypeScript',
+  'Git',
+  'Agile',
+  'Design Thinking',
+  'Google Analytics',
+  'GTM',
+  'Looker Studio'
 ];
 
-const achievements = [
-  '🎖️ Shortlisted in the Top 30 at UXcel Design Contest (Dec 2023) – Designed a seamless search and booking experience to help users discover holiday-related events and experiences effortlessly.',
-  '🥉 Bronze Winner at Crowbar Awards (Sep 2010) – Recognized among 1,000 entries from 39 global schools in a prestigious competition organized by the Association of Accredited Advertising Agents Singapore (4As)',
-  '🏆 Outstanding Prize & Most Voted Prize in Innovation Design at Creative + Recycle = Winning for Charity (2010) – Awarded at a creative event bazaar held at Berjaya Times Square, Kuala Lumpur.',
+const achievements: string[] = [
+  "🎖️ Shortlisted in the Top 30 at UXcel Design Contest (Dec 2023) – Designed a seamless search and booking experience to help users discover holiday-related events and experiences effortlessly.",
+  "🥉 Bronze Winner at Crowbar Awards (Sep 2010) – Recognized among 1,000 entries from 39 global schools in a prestigious competition organized by the Association of Accredited Advertising Agents Singapore (4As)",
+  "🏆 Outstanding Prize & Most Voted Prize in Innovation Design at Creative + Recycle = Winning for Charity (2010) – Awarded at a creative event bazaar held at Berjaya Times Square, Kuala Lumpur."
 ];
 
 const AboutPage: React.FC = () => {
   const [expandedDescriptions, setExpandedDescriptions] = useState<{ [key: number]: boolean }>({});
   const [expandedSections, setExpandedSections] = useState<{ [key: number]: boolean }>({});
   const [isLoaded, setIsLoaded] = useState(false);
+  const location = useLocation();
+  const [activeTab, setActiveTab] = useState('work');
 
   useEffect(() => {
     setIsLoaded(true);
@@ -402,143 +414,141 @@ const AboutPage: React.FC = () => {
           </p>
         </section>
 
-        {/* Language Section */}
-        <div className="mb-12 animate-slide-up" style={{ animationDelay: '200ms' }}>
-          <h1 className="text-2xl font-bold mb-4 animate-text-focus">Languages</h1>
-          <div className="flex flex-wrap gap-2 mt-4">
-            <span className="text-sm px-3 py-1 bg-blue-100 text-blue-600 rounded-full transition-transform hover:scale-105">Mandarin</span>
-            <span className="text-sm px-3 py-1 bg-blue-100 text-blue-600 rounded-full transition-transform hover:scale-105">English</span>
-            <span className="text-sm px-3 py-1 bg-blue-100 text-blue-600 rounded-full transition-transform hover:scale-105">Malay</span>
+        {/* Navigation Menu */}
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex rounded-full bg-gray-100 p-1">
+            <button
+              onClick={() => setActiveTab('work')}
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                activeTab === 'work'
+                  ? 'bg-white text-gray-900 shadow-sm'
+                  : 'text-gray-500 hover:text-gray-900'
+              }`}
+            >
+              Work
+            </button>
+            <button
+              onClick={() => setActiveTab('hobbies')}
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                activeTab === 'hobbies'
+                  ? 'bg-white text-gray-900 shadow-sm'
+                  : 'text-gray-500 hover:text-gray-900'
+              }`}
+            >
+              Hobbies
+            </button>
           </div>
         </div>
 
-        {/* Experience Section */}
-        <section className="mb-16 animate-slide-up" style={{ animationDelay: '400ms' }}>
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 animate-text-focus">Experience</h2>
-          <div className="space-y-6">
-            {experiences.map((exp, index) => (
-              <div key={index} 
-                className="p-6 rounded-lg border border-gray-200 bg-white transition-all duration-300 hover:shadow-md"
-                style={{ animationDelay: `${(index + 3) * 200}ms` }}
-              >
-                <div className="flex items-center space-x-4 mb-4">
-                  <img 
-                    src={exp.logo || '/assets/images/company-logos/placeholder-logo.svg'} 
-                    alt={`${exp.company} logo`} 
-                    className="w-10 h-10 object-contain"
-                  />
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 animate-slide-in">{exp.title}</h3>
-                    <p className="text-sm text-gray-500">{exp.company} | {exp.duration}</p>
+        {/* Content based on active tab */}
+        {activeTab === 'work' ? (
+          <div>
+            {/* Experience Section */}
+            <section className="mb-16">
+              <h3 className="text-xl font-bold text-gray-900 mb-6">Experience</h3>
+              <div className="space-y-8">
+                {experiences.map((exp, index) => (
+                  <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-duration-300">
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <h4 className="text-lg font-semibold">{exp.title}</h4>
+                        <p className="text-gray-600">{exp.company}</p>
+                        <div className="flex items-center gap-2">
+                          <p className="text-gray-500 text-sm">{exp.duration}</p>
+                          <button
+                            onClick={() => toggleDescription(index)}
+                            className="text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors"
+                          >
+                            {expandedDescriptions[index] ? 'Read less' : 'Read more'}
+                          </button>
+                        </div>
+                      </div>
+                      {exp.logo && (
+                        <img src={exp.logo} alt={exp.company} className="w-12 h-12 object-contain" />
+                      )}
+                    </div>
+                    <div className={`mt-4 transition-all duration-300 ${expandedDescriptions[index] ? 'opacity-100 max-h-[1000px]' : 'opacity-0 max-h-0 overflow-hidden'}`}>
+                      <div className="text-gray-700">{exp.description}</div>
+                      <div className="mt-4">
+                        <h5 className="font-medium mb-2">Key Achievements:</h5>
+                        <ul className="list-disc list-inside space-y-1">
+                          {exp.highlights.map((highlight, idx) => (
+                            <li key={idx} className="text-gray-600">{highlight}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                
-                {/* Highlights */}
-                <ul className={`mt-4 space-y-2 transition-all duration-300 ${!expandedDescriptions[index] ? 'hidden' : ''}`}>
-                  {exp.highlights.map((highlight, i) => (
-                    <li key={i} className="flex items-start space-x-2 animate-slide-in" style={{ animationDelay: `${i * 100}ms` }}>
-                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-blue-500 mt-2"></span>
-                      <span className="text-gray-700">{highlight}</span>
-                    </li>
-                  ))}                  
-                </ul>
-
-                {/* Description with Read More */}
-                <div className="mt-4 pt-4 border-t border-gray-200 text-gray-600">
-                  <div className={`transition-all duration-300 ${!expandedDescriptions[index] ? 'line-clamp-2' : ''}`}>
-                    {exp.description}
-                  </div>
-                  <button
-                    onClick={() => toggleDescription(index)}
-                    className="text-blue-600 hover:text-blue-800 font-medium mt-2 transition-colors"
-                  >
-                    {expandedDescriptions[index] ? 'Read less' : 'Read more'}
-                  </button>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </section>
+            </section>
 
-        {/* Skills Section */}
-        <section className="mb-16 animate-slide-up" style={{ animationDelay: '600ms' }}>
-          <h2 className="text-2xl font-bold text-gray-900 animate-text-focus">Skills</h2>
-          <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {skills.map((skill, index) => (
-              <li key={index} className="flex items-center space-x-2 animate-slide-in" style={{ animationDelay: `${index * 100}ms` }}>
-                <span className="h-2 w-2 rounded-full bg-indigo-600"></span>
-                <span className="text-gray-700">{skill}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
+            {/* Skills Section */}
+            <section className="mb-16">
+              <h3 className="text-xl font-bold text-gray-900  mb-6">Skills</h3>
+              <div className="flex flex-wrap gap-3">
+                {skills.map((skill, index) => (
+                  <span
+                    key={index}
+                    className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full "
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </section>
 
-        {/* Achievements Section */}
-        <section className="animate-slide-up" style={{ animationDelay: '800ms' }}>
-          <h2 className="text-2xl font-bold text-gray-900 animate-text-focus">Achievements</h2>
-          <ul className="mt-4 space-y-4">
-            {achievements.map((achievement, index) => (
-              <li key={index} className="flex items-start space-x-2 animate-slide-in" style={{ animationDelay: `${index * 200}ms` }}>
-                <svg
-                  className="h-5 w-5 flex-shrink-0 text-green-500"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span className="text-gray-700">{achievement}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
+            {/* Certifications Section */}
+            <section className="mb-16">
+              <h3 className="text-xl font-bold text-gray-900 mb-6">Certifications</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {certifications.map((cert) => (
+                  <a
+                    key={cert.id}
+                    href={cert.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-duration-300"
+                  >
+                    <div className="flex items-start gap-4">
+                      <img
+                        src={`./assets/images/cert-logos/${cert.issuer}`}
+                        alt={cert.issuer}
+                        className="w-12 h-12 object-contain"
+                      />
+                      <div>
+                        <h4 className="font-semibold text-gray-900">{cert.name}</h4>
+                        <p className="text-gray-500 text-sm">{cert.issue_date}</p>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
 
-        {/* Certifications Section */}
-        <section className="mt-16 animate-slide-up" style={{ animationDelay: '1000ms' }}>
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 animate-text-focus">Certifications</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {certifications.map((cert, index) => (
-              <a
-                key={cert.id}
-                href={cert.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group p-4 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-all duration-300 animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="flex items-center space-x-3 mb-2">
-                  <div className="flex-shrink-0">
-                    <img
-                      src={`./assets/images/cert-logos/${cert.issuer.toLowerCase()} `}
-                      alt={`${cert.issuer} logo`}
-                      className="w-8 h-8 object-contain"
-                    />
+            {/* Achievements Section */}
+            <section className="mb-16">
+              <h3 className="text-xl font-bold text-gray-900 mb-6">Achievements</h3>
+              <div className="space-y-4">
+                {achievements.map((achievement, index) => (
+                  <div
+                    key={index}
+                    className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-duration-300"
+                  >
+                    <p className="text-gray-700">{achievement}</p>
                   </div>
-                  <div>
-                    <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">
-                      {cert.name}
-                    </h3>
-                    
-                  </div>
-                </div>
-                <div className="text-xs text-gray-500">
-                  Issued {new Date(cert.issue_date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
-                </div>
-              </a>
-            ))}
+                ))}
+              </div>
+            </section>
           </div>
-        </section>
+
+          
+        ) : (
+          <AboutCher />
+        )}
       </main>
 
-      {/* Footer */}
-      <footer className="text-center text-gray-500 text-sm mt-12 animate-fade-in" style={{ animationDelay: '1000ms' }}>
-        <p>© 2025 SinCher. All rights reserved.</p>
-      </footer>
+      
     </div>
   );
 };
