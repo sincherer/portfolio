@@ -1,5 +1,5 @@
 import React from "react";
-import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaGithub, FaLinkedin, FaBehance, FaWhatsapp } from "react-icons/fa";
 
 
 const Home = () => {
@@ -28,14 +28,20 @@ const Home = () => {
           results.
         </p>
         <div className="flex justify-center gap-4 mt-4 text-gray-600">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <FaInstagram size={20} aria-label="Instagram" />
+          <a href="https://wa.link/v1kjv5" target="_blank" rel="noopener noreferrer">
+            <FaWhatsapp size={20} aria-label="LinkedIn" />
           </a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://my.linkedin.com/in/sincherer" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin size={20} aria-label="LinkedIn" />
+          </a>
+          <a href="hhttps://www.behance.net/sincherer/projects" target="_blank" rel="noopener noreferrer">
+            <FaBehance size={20} aria-label="Behance" />
+          </a>
+          <a href="https://github.com/sincherer" target="_blank" rel="noopener noreferrer">
             <FaGithub size={20} aria-label="GitHub" />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin size={20} aria-label="LinkedIn" />
+          <a href="https://instagram.com/sincherr" target="_blank" rel="noopener noreferrer">
+            <FaInstagram size={20} aria-label="Instagram" />
           </a>
         </div>
       </section>
