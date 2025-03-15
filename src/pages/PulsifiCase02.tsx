@@ -80,17 +80,28 @@ const PulsifiCase02 = () => {
                 <li>Interactive data visualization</li>
               </ul>
             </div>
-            <div className="grid md:grid-cols-2 gap-8">
+
+
+            {/* Image session */}
+            <div className="grid grid-cols-1 gap-8">
               <div>
-                <h3 className="text-lg font-medium mb-3">Before</h3>
-                <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
-                  [Basic Metrics Dashboard]
+                <h3 className="text-lg font-medium mb-3">Looker Big Query</h3>
+                <div className="bg-gray-200 rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/looker-query.png"
+                    alt="Before navigation redesign"
+                    className="rounded-lg max-w-full h-auto"
+                  />
                 </div>
               </div>
               <div>
-                <h3 className="text-lg font-medium mb-3">After</h3>
-                <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
-                  [Advanced Analytics Dashboard]
+                <h3 className="text-lg font-medium mb-3">Dashboard</h3>
+                <div className="bg-gray-200 rounded-lg flex items-center justify-center p-4">
+                  <img
+                    src="../assets/images/looker-dashboard.png"
+                    alt="After navigation redesign"
+                    className="rounded-lg max-w-full h-auto"
+                  />
                 </div>
               </div>
             </div>

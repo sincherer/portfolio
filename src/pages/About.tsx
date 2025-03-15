@@ -14,7 +14,7 @@ const experiences: Experience[] = [
         title: 'Senior UI/UX Designer',
         company: 'Pulsifi Pte. Ltd',
         duration: 'May 2023 - Present',
-        logo: '../assets/images/company-logos/pulsifi_logo.jpg',
+        logo: '/assets/images/company-logos/placeholder-logo.svg',
         highlights: [
           'Led user-centered interface design across platforms',
           'Developed scalable design system for NG-ZORRO',
@@ -42,7 +42,7 @@ const experiences: Experience[] = [
         title: 'Senior UI/UX Designer',
         company: 'TOGL Technology Sdn Bhd',
         duration: 'Aug 2022 - May 2023',
-        logo: '../assets/images/company-logos/togl logo.jpg',
+        logo: '/assets/images/company-logos/placeholder-logo.svg',
         highlights: [
           'Led end-to-end user experience design and strategy',
           'Collaborated with cross-functional teams for brand integrity',
@@ -70,7 +70,7 @@ const experiences: Experience[] = [
     title: 'UI/UX Designer',
     company: 'GoKudos Sdn Bhd',
     duration: 'Oct 2021 - Aug 2022',
-    logo: '../assets/images/company-logos/gokudoslogo.jpg',
+    logo: '/assets/images/company-logos/placeholder-logo.svg',
     highlights: [
       'Redesigned and restructured SaaS platform',
       'Created user-centric designs with Figma',
@@ -98,7 +98,7 @@ const experiences: Experience[] = [
     title: 'Senior Marketing Exec.',
     company: 'SICK Sensor Malaysia',
     duration: 'Nov 2020 - June 2021',
-    logo: '../assets/images/company-logos/sick-logo.png',
+    logo: '/assets/images/company-logos/placeholder-logo.svg',
     highlights: [
       'Executed high-impact marketing plans',
       'Developed social media and website strategies',
@@ -126,7 +126,7 @@ const experiences: Experience[] = [
     title: 'Branding Specialist',
     company: 'KHP Steel Product (M) Sdn Bhd',
     duration: 'Jan 2018 - Nov 2020',
-    logo: '../assets/images/company-logos/kextra.png',
+    logo: '/assets/images/company-logos/placeholder-logo.svg',
     highlights: [
       'Led integrated marketing strategies',
       'Managed B2B and B2C brand portfolios',
@@ -160,7 +160,7 @@ const experiences: Experience[] = [
     title: 'Senior UI/UX Designer',
     company: 'Intelligent Earnings Sdn Bh',
     duration: 'Jan 2016 - Dec 2017',
-    logo: '../assets/images/company-logos/intelligent-earning.png',
+    logo: '/assets/images/company-logos/placeholder-logo.svg',
     highlights: [
       'Led design vision and product direction',
       'Enhanced hiring process and team building',
@@ -196,7 +196,7 @@ const experiences: Experience[] = [
     title: 'Senior Designer',
     company: 'OPPO Electronics Sdn Bhd',
     duration: 'Jan 2013 - Dec 2015',
-    logo: '../assets/images/company-logos/oppo_logo.png',
+    logo: '/assets/images/company-logos/placeholder-logo.svg',
     highlights: [
       'Led Malaysia advertising concept',
       'Managed team of three designers',
@@ -223,7 +223,7 @@ const experiences: Experience[] = [
     title: 'Creative Director',
     company: 'JT Apps Sdn Bhd',
     duration: 'July 2012 - Jan 2013',
-    logo: '../assets/images/company-logos/jtapps.png',
+    logo: '/assets/images/company-logos/placeholder-logo.svg',
     highlights: [
       'Led team of three designers',
       'Built brand identities for major clients',
@@ -326,7 +326,7 @@ const AboutPage: React.FC = () => {
               >
                 <div className="flex items-center space-x-4 mb-4">
                   <img 
-                    src={exp.logo || '/src/assets/images/company-logos/placeholder-logo.svg'} 
+                    src={exp.logo || '/assets/images/company-logos/placeholder-logo.svg'} 
                     alt={`${exp.company} logo`} 
                     className="w-10 h-10 object-contain"
                   />
