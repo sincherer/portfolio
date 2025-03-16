@@ -1,6 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaInstagram, FaGithub, FaLinkedin, FaBehance, FaWhatsapp } from "react-icons/fa";
 
+interface TypewriterProps {
+  text: string;
+}
+
+export const TypewriterText = ({ text }: TypewriterProps) => {
+  const [displayText, setDisplayText] = useState('');
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const interval = setInterval(() => {
+      if (currentIndex <= text.length) {
+        setDisplayText(text.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, [text]);
+
+  return <span>{displayText}</span>;
+};
 
 const Home = () => {
   return (
@@ -12,8 +35,8 @@ const Home = () => {
           alt="Profile"
           className="w-20 h-20 rounded-full mx-auto"
         />
-        <h1 className="text-3xl font-bold mt-4 animate-fade-right animate-once animate-ease-out animate-delay-1000">
-          Designing Experiences, Elevating Brands.
+        <h1 className="text-3xl font-bold mt-4">
+          <TypewriterText text="Designing Experiences, Elevating Brands." />
         </h1>
         <p className="text-gray-600 mt-2">
           I'm SinCher, a UI/UX designer based in Kuala Lumpur.

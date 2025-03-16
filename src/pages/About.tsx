@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import AboutCher from './AboutCher';
+import { TypewriterText } from './Home';
 
 interface Certification {
   id: string;
@@ -408,7 +409,9 @@ const AboutPage: React.FC = () => {
       <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         {/* About Section */}
         <section className="mb-16 animate-fade-in">
-          <h2 className="text-2xl font-bold text-gray-900 animate-text-focus">About Sin Cher</h2>
+          <h2 className="text-2xl font-bold text-gray-900 animate-text-focus">
+            <TypewriterText text="About Sin Cher" />
+          </h2>
           <p className="mt-4 text-gray-600 animate-slide-in">
             I am a passionate UI/UX designer with over a decade of experience in creating user-centered designs for web and mobile applications. My expertise lies in transforming complex problems into intuitive and delightful user experiences. I enjoy collaborating with cross-functional teams to deliver impactful solutions that drive business success.
           </p>
@@ -554,4 +557,3 @@ const AboutPage: React.FC = () => {
 };
 
 export default AboutPage;
-

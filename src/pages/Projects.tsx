@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Projects.css";
 
@@ -63,7 +63,23 @@ const projects = [
 
 const Project = () => {
   const [selectedTag, setSelectedTag] = useState("");
+  const [displayText, setDisplayText] = useState("");
+  const fullText = "Things I've made trying to put my dent in the universe.";
   const allTags = [...new Set(projects.flatMap(project => project.tags))];
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const typingInterval = setInterval(() => {
+      if (currentIndex <= fullText.length) {
+        setDisplayText(fullText.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 50);
+
+    return () => clearInterval(typingInterval);
+  }, []);
 
   const filteredProjects = selectedTag
     ? projects.filter(project => project.tags.includes(selectedTag))
@@ -72,7 +88,7 @@ const Project = () => {
   return (
     <div className="min-h-screen p-6">
       <div className="max-w-3xl mx-auto text-center mt-12">
-        <h1 className="text-3xl font-bold">Things I've made trying to put my dent in the universe.</h1>
+        <h1 className="text-3xl font-bold">{displayText}</h1>
         <p className="text-gray-600 mt-4">
           I've worked on tons of little projects over the years but these are the ones that I'm most proud of.
         </p>
