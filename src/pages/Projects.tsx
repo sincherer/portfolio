@@ -7,7 +7,7 @@ export const projects = [
     title: "Pulsifi SaaS Navigation",
     description: "Role | Senior UI/UX Designer",
     link: "pulsifi-case-1",
-    icon: "💻 ",
+    image: "/portfolio/assets/images/Pulsifi-Showcase.png",
     tags: ["Pulsifi", "SaaS", "AI"],
     tools: ["Figma", "React", "TailwindCSS"]
   },
@@ -15,7 +15,7 @@ export const projects = [
     title: "Pulsifi Analytics Integration",
     description: "Role | Senior UI/UX Designer",
     link: "pulsifi-case-2",
-    icon: "📊",
+    image: "/portfolio/assets/images/ga-example.png",
     tags: ["Pulsifi","Analytics", "SaaS", "Data"],
     tools: ["Google Analytics", "Looker Studio", "GTM", "Visualization"]
   },
@@ -23,7 +23,7 @@ export const projects = [
     title: "Figma Automation Integration",
     description: "Role | Senior UI/UX Designer",
     link: "pulsifi-case-3",
-    icon: "⚡",
+    image: "/portfolio/assets/images/figma-automation.gif",
     tags: ["Automation", "Pulsifi", "AI"],
     tools: ["Figma", "Google Sheet"]
   },
@@ -31,7 +31,7 @@ export const projects = [
     title: "Knowledge Base Chat bot",
     description: "Role | Creator",
     link: "knowledge-base-case",
-    icon: "💬",
+    image: "/portfolio/assets/images/Chatbot-Showcase.png",
     tags: ["AI", "Database", "Chatbot"],
     tools: ["React", "Ant Design X", "Supabase"]
   },
@@ -39,7 +39,7 @@ export const projects = [
     title: "TogaGo",
     description: "Role | UIUX Designer",
     link: "togago-case",
-    icon: "🛫",
+    image: "/portfolio/assets/images/Togago-Showcase.png",
     tags: ["TOGL", "Web App", "Mobile App"],
     tools: ["Figma", "Sketch"]
   },
@@ -47,11 +47,18 @@ export const projects = [
     title: "GoKudos SaaS Platform Design & Development",
     description: "A case study on designing and developing a comprehensive SaaS platform",
     link: "GoKudos-case",
-    icon: "👔",
+    image: "/portfolio/assets/images/GoKudos-Showcase.png",
     tags: ["GoKudos", "SaaS", "Product Planning"],
     tools: ["Figma", "Wordpress", "Powerpoint", "Adobe Suits"]
   },
-
+  {
+    title: 'Animation Showcase',
+    description: 'Crafting engaging visual stories through animation and video',
+    image: "/portfolio/assets/images/Animation-Showcase.png",
+    link: "/animation-case",
+    tags: ["Animation", "Hand Drawing", "Video Editing","Client Management"],
+    tools: ["Adobe Character", "Adobe Suits", "Drone photography"]
+  },
 ];
 
 const Project = () => {
@@ -82,9 +89,6 @@ const Project = () => {
     <div className="min-h-screen p-6">
       <div className="max-w-3xl mx-auto text-center mt-12">
         <h1 className="text-3xl font-bold">{displayText}</h1>
-        <p className="text-gray-600 mt-4">
-          I've worked on tons of little projects over the years but these are the ones that I'm most proud of.
-        </p>
         <div className="flex flex-wrap gap-2 justify-center mt-6">
           <button
             onClick={() => setSelectedTag("")}
@@ -100,39 +104,37 @@ const Project = () => {
             >
               {tag}
             </button>
-          ))}
+          ))}        
         </div>
       </div>
-      <div className="grid md:grid-cols-1 gap-6 mt-10 max-w-4xl mx-auto">
+      <div className="columns-1 md:columns-2 lg:columns-3 gap-6 mt-10 max-w-7xl mx-auto">
         {filteredProjects.map((project, index) => (
-          <div 
+          <Link 
+            to={`${project.link}`} 
             key={index} 
-            className="p-6 rounded-lg flex items-start space-x-4 bg-white shadow-sm hover:shadow-md transition-all duration-300 ease-in-out"
-            style={{
-              opacity: 0,
-              animation: `fadeIn 0.5s ease-out ${index * 0.15}s forwards`
-            }}
+            className="group relative overflow-hidden rounded-lg block mb-6 break-inside-avoid"
           >
-            <div className="text-3xl">{project.icon}</div>
-            <div>
-              <h2 className="text-lg font-semibold">{project.title}</h2>
-              <p className="text-gray-600 text-sm mt-1">{project.description}</p>
-              <div className="flex flex-wrap gap-2 mt-2">
-                {project.tags.map(tag => (
-                  <span key={tag} className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full">{tag}</span>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-2 mt-2">
+            <img 
+              src={project.image} 
+              alt={project.title}
+              className="w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-6">
+              <h2 className="text-white text-xl font-semibold">
+                {project.title}
+              </h2>
+              
+              <div className="flex flex-wrap gap-2 mt-3">
                 {project.tools.map(tool => (
-                  <span key={tool} className="text-xs px-2 py-1 bg-blue-50 text-blue-600 rounded-full">{tool}</span>
+                  <span key={tool} className="text-xs px-2 py-1 bg-white/20 text-white rounded-full">
+                    {tool}
+                  </span>
                 ))}
               </div>
-              <Link to={`${project.link}`} className="text-blue-600 font-medium mt-2 inline-block hover:text-blue-800 transition-colors">View project →</Link>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
-
       {/* Professional Contact Section */}
       <div className="max-w-3xl mx-auto text-center mt-12"></div>
       <div className="p-6 border rounded-lg bg-gray-50 hover:bg-white transition-colors duration-300">
