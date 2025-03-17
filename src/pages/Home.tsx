@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaInstagram, FaGithub, FaLinkedin, FaBehance, FaWhatsapp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 interface TypewriterProps {
   text: string;
@@ -25,11 +26,32 @@ export const TypewriterText = ({ text }: TypewriterProps) => {
   return <span>{displayText}</span>;
 };
 
+const features = [
+  {
+    name: 'Pulsifi SaaS Platform',
+    description: 'Led the redesign of a comprehensive HR analytics platform, improving user engagement and workflow efficiency for enterprise clients.',
+    image: "/portfolio/assets/images/Pulsifi-Showcase.png",
+    link: "/usecase-pulsifi"
+  },
+  {
+    name: 'TogaGo Responsive Web Application',
+    description: 'Transforming a complex booking system into a streamlined user experience.',
+    image: "/portfolio/assets/images/Togago-Showcase.png",
+    link: "/projects/togago-case"
+  },
+  {
+    name: 'GoKudos SaaS Platform',
+    description: 'As a new startup, GoKudos needed a fast and scalable SaaS platform to manage multiple business operations while maintaining a user-friendly interface.',
+    image: "/portfolio/assets/images/GoKudos-Showcase.png",
+    link: "/projects/GoKudos-case"
+  },
+];
+
 const Home = () => {
   return (
-    <div className="max-w-4xl mx-auto px-6 ">
+    <div className="max-w-4xl mx-auto px-6">
       {/* Hero Section */}
-      <section className="text-center py-12 ">
+      <section className="text-center py-12">
         <img
           src="/portfolio/assets/images/profile.png"
           alt="Profile"
@@ -68,6 +90,49 @@ const Home = () => {
           </a>
         </div>
       </section>
+
+      {/* Featured Work Section */}
+      <div className="overflow-hidden sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl">
+            <h2 className="text-base font-semibold text-blue-600">Featured Work</h2>
+            <p className="mt-6 text-lg text-gray-600">
+              Explore some of my recent work where I've helped businesses transform their digital presence and improve user experiences.
+            </p>
+          </div>
+          <div className="mt-16 space-y-20">
+            {features.map((feature) => (
+              <div key={feature.name} className="relative group">
+                <div className="relative overflow-hidden rounded-lg shadow-lg">
+                  <img
+                    src={feature.image}
+                    alt={feature.name}
+                    className="w-full h-[400px] object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent transition-opacity duration-300 group-hover:opacity-90"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white transform transition-transform duration-300">
+                    <h3 className="text-2xl font-semibold mb-3">
+                      <Link to={feature.link} className="hover:text-blue-400 transition-colors">
+                        {feature.name}
+                      </Link>
+                    </h3>
+                    <p className="text-lg text-gray-200 mb-4">{feature.description}</p>
+                    <Link 
+                      to={feature.link} 
+                      className="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center"
+                    >
+                      View Case Study
+                      <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* Professional Contact Section */}
       <div className="p-6 border rounded-lg bg-gray-50 hover:bg-white transition-colors duration-300">

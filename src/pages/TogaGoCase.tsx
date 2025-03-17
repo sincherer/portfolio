@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const TogaGoCase = () => {
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
-    <div className="min-h-screen p-6 max-w-4xl mx-auto">
+    <div className="min-h-screen p-6 max-w-4xl mx-auto relative">
         <div className="mb-8">
           <button
             onClick={() => window.history.back()}
             className="text-blue-600 font-medium mt-2 inline-block cursor-pointer"
           >
-         ← Back to projects
+         ← Back
         </button>
       </div>
       <div className="mt-12 space-y-8">
@@ -170,6 +188,27 @@ const TogaGoCase = () => {
         </div>
       </div>
       </div>
+      {/* Back to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg transition-opacity duration-300 hover:bg-blue-700 focus:outline-none ${showBackToTop ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        aria-label="Back to top"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M5 10l7-7m0 0l7 7m-7-7v18"
+          />
+        </svg>
+      </button>
     </div>
   );
 };

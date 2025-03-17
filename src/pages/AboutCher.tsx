@@ -9,6 +9,12 @@ const AboutCher = () => {
         <p className="text-lg text-gray-700">
           Welcome to my little corner of the internet! Let me tell you about myself—don’t worry, it’s not boring (I promise).
         </p>
+        <br/> 
+        <img
+                src="/portfolio/assets/images/casual/me_smiling.jpg"
+                alt="me smiling"
+                className="rounded-lg object-cover w-full h-full"
+              />
       </div>
 
       {/* Content Section */}
@@ -21,6 +27,12 @@ const AboutCher = () => {
             They’re low-maintenance but surprisingly entertaining. Watching them zip around their tank is oddly therapeutic.
             Plus, they’re way less demanding than a dog or cat. No walks, no litter boxes—just good vibes and bubbles.
           </p>
+          <br/> 
+        <img
+                src="/portfolio/assets/images/casual/guppy.jpg"
+                alt="my roommates"
+                className="rounded-lg object-cover w-full h-full"
+              />
         </section>
 
         {/* Mini Green Plants */}
@@ -31,6 +43,12 @@ const AboutCher = () => {
             around—they make everything feel fresh and alive. It’s like having tiny oxygen-producing roommates who never talk back.
             Bonus: they’re great listeners when I’m brainstorming ideas or just need to vent about life.
           </p>
+          <br/> 
+        <img
+                src="/portfolio/assets/images/casual/jungle.jpg"
+                alt="mini jungle"
+                className="rounded-lg object-cover w-full h-full"
+              />
         </section>
 
         {/* DIY Enthusiast */}
@@ -44,6 +62,12 @@ const AboutCher = () => {
             <li>
               <strong>Woolfelt Dolls:</strong> Turning fluffy wool into adorable dolls is oddly satisfying. It’s like magic, but
               messier.
+              <br/> 
+        <img
+                src="/portfolio/assets/images/casual/woolfelt.jpg"
+                alt="woolfelt doll"
+                className="rounded-lg object-cover w-full h-full"
+              />
             </li>
             <li>
               <strong>Painting:</strong> I’m no Picasso, but I enjoy splashing colors on canvas. Abstract art? That’s just a
@@ -52,6 +76,12 @@ const AboutCher = () => {
             <li>
               <strong>Candles with Fragrance:</strong> Nothing beats the smell of homemade candles. Plus, I get to pretend I’m
               running a luxury spa in my kitchen.
+              <br/> 
+        <img
+                src="/portfolio/assets/images/casual/candle.jpg"
+                alt="candle"
+                className="rounded-lg object-cover w-full h-full"
+              />
             </li>
             <li>
               <strong>Lego Models:</strong> Forget official sets—I’m all about pasar malam quality knockoffs. As long as I have
@@ -69,6 +99,12 @@ const AboutCher = () => {
             aromatic brown goodness. Sure, I might burn a batch every now and then, but hey, even coffee needs a bad day
             sometimes.
           </p>
+          <br/> 
+        <img
+                src="/portfolio/assets/images/casual/coffee.jpg"
+                alt="coffee"
+                className="rounded-lg object-cover w-full h-full"
+              />
         </section>
 
         {/* Music Exploration */}
@@ -79,6 +115,12 @@ const AboutCher = () => {
             concert anytime soon. But hey, practice makes perfect, right? At least the neighbors haven’t complained yet…
             probably.
           </p>
+          <br/> 
+        <img
+                src="/portfolio/assets/images/casual/guitar.jpg"
+                alt="me playing guitar"
+                className="rounded-lg object-cover w-full h-full"
+              />
         </section>
 
         {/* Reading Habit */}

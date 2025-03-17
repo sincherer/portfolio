@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Projects.css";
 
-const projects = [
+export const projects = [
   {
     title: "Pulsifi SaaS Navigation",
     description: "Role | Senior UI/UX Designer",
@@ -51,14 +51,7 @@ const projects = [
     tags: ["GoKudos", "SaaS", "Product Planning"],
     tools: ["Figma", "Wordpress", "Powerpoint", "Adobe Suits"]
   },
-  {
-    title: "Design Thinking Process",
-    description: "Exploring systematic problem-solving through real case studies",
-    link: "design-thinking",
-    icon: "🎯",
-    tags: ["UX Design", "Case Study", "Process"],
-    tools: ["Design Thinking", "User Research", "Prototyping"]
-  },
+
 ];
 
 const Project = () => {
