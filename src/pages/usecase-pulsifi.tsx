@@ -268,7 +268,7 @@ const UsecasePulsifi = () => {
           <p className="text-gray-600 mb-6">Looking for a passionate UI/UX designer to join your team?</p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="../assets/images/ErSinCher Resume.pdf"
+              href="./assets/images/ErSinCher Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 bg-gray-900 text-white py-3 px-6 rounded-lg hover:bg-gray-700 text-center flex items-center justify-center gap-2"
