@@ -265,7 +265,7 @@ const UsecasePulsifi = () => {
         {/* Professional Contact */}
         <section className="bg-gray-50 p-8 rounded-lg hover:bg-white transition-colors duration-300">
           <h3 className="text-2xl font-bold mb-4">Let's Connect!</h3>
-          <p className="text-gray-600 mb-6">Looking to transform your organization's talent management with innovative solutions?</p>
+          <p className="text-gray-600 mb-6">Looking for a passionate UI/UX designer to join your team?</p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="../assets/images/ErSinCher Resume.pdf"
