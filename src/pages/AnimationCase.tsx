@@ -190,7 +190,7 @@ const AnimationCase = () => {
               Download Resume
             </a>
             <a
-              href="mailto:sincher.er@gmail.com"
+              href="mailto:ersincher@gmail.com"
               className="flex-1 border border-gray-900 text-gray-900 py-2 px-4 rounded-md hover:bg-gray-100 text-center flex items-center justify-center gap-2"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
