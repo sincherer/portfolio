@@ -8,8 +8,18 @@ const Cursor: React.FC<CursorProps> = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isPointer, setIsPointer] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Check if device is mobile
+    const checkMobile = () => {
+      const isMobileDevice = window.matchMedia('(max-width: 768px), (pointer: coarse)').matches;
+      setIsMobile(isMobileDevice);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
     // Update cursor position
     const updateCursorPosition = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
@@ -38,11 +48,12 @@ const Cursor: React.FC<CursorProps> = () => {
       document.removeEventListener('mousemove', updateCursorStyle);
       document.removeEventListener('mouseenter', handleMouseEnter);
       document.removeEventListener('mouseleave', handleMouseLeave);
+      window.removeEventListener('resize', checkMobile);
     };
   }, [position]);
 
-  // Hide cursor on server-side rendering
-  if (typeof window === 'undefined' || isHidden) return null;
+  // Hide cursor on server-side rendering or mobile devices
+  if (typeof window === 'undefined' || isHidden || isMobile) return null;
 
   return (
     <>
