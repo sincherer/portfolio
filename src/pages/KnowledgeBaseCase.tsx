@@ -1,6 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const KnowledgeBaseCase = () => {
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <div className="min-h-screen p-6">
       <div className="mb-8">
@@ -8,7 +26,7 @@ const KnowledgeBaseCase = () => {
             onClick={() => window.history.back()}
             className="text-blue-600 font-medium mt-2 inline-block cursor-pointer"
           >
-         ← Back to projects
+         ← Back
         </button>
       </div>
       <div className="max-w-4xl mx-auto">
@@ -84,10 +102,10 @@ const KnowledgeBaseCase = () => {
                 <li>Interactive learning capabilities</li>
               </ul>
             </div>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 gap-8">
               <div>
                 <h3 className="text-lg font-medium mb-3">Query Processing</h3>
-                <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
+                <div className=" rounded-lg flex items-center justify-center p-4">
                 <img
                     src="../assets/images/knowledgebase.PNG"
                     alt="After navigation redesign"
@@ -97,7 +115,7 @@ const KnowledgeBaseCase = () => {
               </div>
               <div>
                 <h3 className="text-lg font-medium mb-3">Knowledge Management</h3>
-                <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
+                <div className="rounded-lg flex items-center justify-center p-4">
                 <img
                     src="../assets/images/database.PNG"
                     alt="After navigation redesign"
@@ -108,7 +126,7 @@ const KnowledgeBaseCase = () => {
             </div>
             <div>
                 <h3 className="text-lg font-medium mb-3">Demo</h3>
-                <div className="bg-gray-200 rounded-lg flex items-center justify-center p-4">
+                <div className=" rounded-lg flex items-center justify-center p-4">
                   <img
                     src="../assets/images/Sloth X.gif"
                     alt="After navigation redesign"
@@ -184,7 +202,29 @@ const KnowledgeBaseCase = () => {
           </a>
         </div>
       </div>
+      
       </div>
+      {/* Back to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg transition-opacity duration-300 hover:bg-blue-700 focus:outline-none ${showBackToTop ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        aria-label="Back to top"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M5 10l7-7m0 0l7 7m-7-7v18"
+          />
+        </svg>
+      </button>
     </div>
   );
 };

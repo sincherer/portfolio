@@ -16,6 +16,7 @@ import DesignThinking from "./pages/DesignThinking";
 import AboutCher from "./pages/AboutCher";
 import ChatBot from "./pages/ChatBot";
 import UsecasePulsifi from "./pages/usecase-pulsifi";
+import AnimationCase from "./pages/AnimationCase";
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
         <Route path="/projects/design-thinking" element={<DesignThinking />} />
         <Route path="/projects/chatbot" element={<ChatBot />} />
         <Route path="/usecase-pulsifi" element={<UsecasePulsifi />} />
+        <Route path="/animation-case" element={<AnimationCase />} />
       </Routes>
     </Layout>
   );

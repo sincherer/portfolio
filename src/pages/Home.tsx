@@ -45,6 +45,18 @@ const features = [
     image: "/portfolio/assets/images/GoKudos-Showcase.png",
     link: "/projects/GoKudos-case"
   },
+  {
+    name: 'Self Learning Project - ChatBot',
+    description: 'Building an intelligent chatbot that can effectively that match user queries with relevant answers from a knowledge base,handle varying levels of query confidence, and maintain and expand its knowledge database',
+    image: "/portfolio/assets/images/Chatbot-Showcase.png",
+    link: "/projects/knowledge-base-case"
+  },
+  {
+    name: 'Animation Showcase',
+    description: 'Crafting engaging visual stories through animation and video',
+    image: "/portfolio/assets/images/Animation-Showcase.png",
+    link: "/animation-case"
+  },
 ];
 
 const Home = () => {
